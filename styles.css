@@ -1,3 +1,5 @@
+/* pagina de inicio */
+
 body{
     background-color: #f5c55ed5;;
     margin: auto;
@@ -31,7 +33,7 @@ body{
     border-radius: 12px;
 }
 
-.conteiner-iniciar{
+.conteiner-iniciar, .conteiner-siguiente{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +41,7 @@ body{
     flex-direction: column;
 }
 
-.button-iniciar{
+.button-iniciar, .quizz-button, .button-siguiente{
     flex-grow: 1;
     flex-basis: 200;
     max-width: 300px;
@@ -52,7 +54,29 @@ body{
 }
 
 
-.button-iniciar:hover{
+.button-iniciar:hover, .button-siguiente:hover{
     background-color: #2ecc71;
     transform: scale(1.2);
 }
+
+/* pagina de inicio */
+
+.conteiner-buttons{
+    width: 100%;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+
+
+/*footer*/
+
+/*footer*/
+
+
