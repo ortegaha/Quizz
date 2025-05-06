@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <div class="conteiner-titulo">
+        <h1 class="titulo">
+            TOTAL DE ACIERTOS
+        </h1>
+    </div>
+    <h2 id="Resultado" style="text-align: center;"></h2>
+    <div class="conteiner-iniciar">
+        <a onclick="borrarPuntos()" class="button-iniciar" href="index.html">reiniciar</a>
+    </div>
+    <script>
+        let puntos = parseInt(localStorage.getItem("puntos")) || 0;
+        document.getElementById("Resultado").textContent = `Total de puntos: ${puntos}`;
+        function borrarPuntos() {
+        localStorage.removeItem("puntos");
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            localStorage.removeItem("puntos");
+        });
+    </script>
+</body>
+</html>
