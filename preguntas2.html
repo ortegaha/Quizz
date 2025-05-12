@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="back.js"></script>
+</head>
+<body>
+    <div class="conteiner-titulo">
+        <h1 class="titulo">
+            PREGUNTA 2
+        </h1>
+    </div>
+    <div class="conteiner-explicacion">
+        <p class="explicacion">
+            2. ¿Qué tipo de servicios ofrece el Centro de Rehabilitación y Educación Especial (CREE)?
+        </p>
+    </div>
+    <div class="conteiner-buttons">
+        <button id="button1" onclick="Incorrecto()" class="quizz-button">a) Clases de música</button>
+        <button id="button2" onclick="Pg2();" class="quizz-button">b) Servicios terapéuticos y psicológicos</button>
+        <button id="button3" onclick="Incorrecto()" class="quizz-button">c) Venta de medicamentos</button>
+    </div>
+    <div class="conteiner-siguiente">
+        <a class="button-siguiente" href="preguntas3.html">SIGUIENTE</a>
+    </div>
+    <script>
+        document.getElementById("button2").addEventListener("click", function() {
+        let puntos = parseInt(localStorage.getItem("puntos")) || 0;
+        puntos += 1;
+        localStorage.setItem("puntos", puntos);
+        });
+            document.addEventListener("DOMContentLoaded", function() {
+            let numeros = [];
+            let num1, num2, num3;
+            while (numeros.length < 3) {
+                let numero = Math.floor(Math.random() * 3) + 1
+                if (!numeros.includes(numero)) {
+                    numeros.push(numero);
+                }
+            }
+            [num1, num2, num3] = numeros;
+            document.getElementById("button1").style.order = num1
+            document.getElementById("button2").style.order = num2
+            document.getElementById("button3").style.order = num3
+        });
+        function Incorrecto(){
+        document.getElementById("button1").style.backgroundColor = "red";
+        document.getElementById("button3").style.backgroundColor = "red";
+        document.getElementById("button2").disabled = true;
+    }
+    </script>
+</body>
+</html>
